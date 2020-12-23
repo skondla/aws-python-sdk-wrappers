@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Author: Sudheer Kondla, 04/21/17, Sudheer.Kondla@ibm.com
+# Author: Sudheer Kondla, 04/21/17, skondla@me.com
 # Purpose: RDS Instance Administration
 
 import boto3

@@ -49,8 +49,8 @@ def sendEmail(subject,content):
 				'Data': '%s' % subject,
 			},
 		},
-		Source='sudheer.kondla@ibm.com',
-		#SourceArn='arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
+		Source='skondla@me.com',
+		#SourceArn='arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
 	)
 	return response
 
@@ -71,7 +71,7 @@ def sendEmailAttach(fileName, content):
 	bccAddr = emailList(os.environ['SES_DIR']+'/email.bcc')
 	message = MIMEMultipart()
 	message['Subject'] = content[0]
-	message['From'] = 'Sudheer.Kondla@ibm.com'
+	message['From'] = 'skondla@me.com'
 	message['To'] = ', '.join(toAddr)
 	part = MIMEText(content[1], 'html')
 	message.attach(part)
@@ -93,8 +93,8 @@ def sendEmailAttach(fileName, content):
 			RawMessage={
 				'Data': message.as_string()
 			}
-			# Source='sudheer.kondla@ibm.com',
-			# SourceArn='arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
+			# Source='skondla@me.com',
+			# SourceArn='arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
 		)
 
 	else:  # if file provided
@@ -106,7 +106,7 @@ def sendRawEmail(fileName,subject,content):
 	toAddr = open(os.environ['SES_DIR']+'/recipients.list', 'r')
 	toAddr = ' '.join(map(str, toAddr))
 	print('content: ', content)
-	SENDER = "sudheer.kondla@ibm.com"
+	SENDER = "skondla@me.com"
 	RECIPIENT = toAddr
 	AWS_REGION = os.environ['AWS_REGION']
 	SUBJECT = subject
@@ -147,8 +147,8 @@ def sendRawEmail(fileName,subject,content):
 				'Data': msg.as_string(),
 			},
 		)
-		Source = 'sudheer.kondla@ibm.com',
-		SourceArn = 'arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
+		Source = 'skondla@me.com',
+		SourceArn = 'arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
 	except ClientError as e:
 		print(e.response['Error']['Message'])
 	else:
