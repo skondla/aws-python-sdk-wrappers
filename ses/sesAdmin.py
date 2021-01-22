@@ -49,8 +49,8 @@ def sendEmail(subject,content):
 				'Data': '%s' % subject,
 			},
 		},
-		Source='skondla@me.com',
-		#SourceArn='arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
+		Source='sudheer.kondla@ibm.com',
+		#SourceArn='arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
 	)
 	return response
 
@@ -71,7 +71,7 @@ def sendEmailAttach(fileName, content):
 	bccAddr = emailList(os.environ['SES_DIR']+'/email.bcc')
 	message = MIMEMultipart()
 	message['Subject'] = content[0]
-	message['From'] = 'skondla@me.com'
+	message['From'] = 'Sudheer.Kondla@ibm.com'
 	message['To'] = ', '.join(toAddr)
 	part = MIMEText(content[1], 'html')
 	message.attach(part)
@@ -93,8 +93,8 @@ def sendEmailAttach(fileName, content):
 			RawMessage={
 				'Data': message.as_string()
 			}
-			# Source='skondla@me.com',
-			# SourceArn='arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
+			# Source='sudheer.kondla@ibm.com',
+			# SourceArn='arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
 		)
 
 	else:  # if file provided
@@ -106,21 +106,21 @@ def sendRawEmail(fileName,subject,content):
 	toAddr = open(os.environ['SES_DIR']+'/recipients.list', 'r')
 	toAddr = ' '.join(map(str, toAddr))
 	print('content: ', content)
-	SENDER = "skondla@me.com"
+	SENDER = "sudheer.kondla@ibm.com"
 	RECIPIENT = toAddr
 	AWS_REGION = os.environ['AWS_REGION']
 	SUBJECT = subject
 	ATTACHMENT = "" + fileName + ""
 	BODY_TEXT = content
 	BODY_HTML = """\
-    <html>
-    <head></head>
-    <body>
-    <h1>Hello!</h1>
-    <p>{content}</p>
-    </body>
-    </html>
-    """.format(content=content)
+    	<html>
+    	<head></head>
+    	<body>
+    	<h1>Hello!</h1>
+    	<p>{content}</p>
+    	</body>
+    	</html>
+    	""".format(content=content)
 	CHARSET = "utf-8"
 	client = boto3.client('ses', region_name=AWS_REGION)
 	msg = MIMEMultipart('mixed')
@@ -147,8 +147,8 @@ def sendRawEmail(fileName,subject,content):
 				'Data': msg.as_string(),
 			},
 		)
-		Source = 'skondla@me.com',
-		SourceArn = 'arn:aws:ses:us-east-1:229129402234:identity/skondla@me.com',
+		Source = 'sudheer.kondla@ibm.com',
+		SourceArn = 'arn:aws:ses:us-east-1:779129402617:identity/sudheer.kondla@ibm.com',
 	except ClientError as e:
 		print(e.response['Error']['Message'])
 	else:
