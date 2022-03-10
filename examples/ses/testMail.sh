@@ -1,5 +1,5 @@
 #!/bin/bash
-#Author: Sudheer Kondla, Sudheer.Kondla@IBM.com, Date: Feb 2, 2017
+#Author: Sudheer Kondla, Sudheer.Kondla@gmail.com, Date: Feb 2, 2017
 #Purpose: test/use email service SES 
 
 SES_DIR=/home/admin/jobs/ses/emailList
