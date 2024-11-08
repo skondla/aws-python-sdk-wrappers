@@ -1,0 +1,44 @@
+.
+├── directory_structure.txt
+├── dms
+│   └── dmsAdmin.py
+├── ec2
+│   └── ec2Admin.py
+├── examples
+│   ├── ec2
+│   │   ├── attach_volume.py
+│   │   ├── copy_image.py
+│   │   ├── create_ec2_instances.py
+│   │   ├── create_image.py
+│   │   ├── create_volume.py
+│   │   ├── detach_volume.py
+│   │   ├── scaleInstance.py
+│   │   └── stopCassCluster.py
+│   ├── rds
+│   │   ├── desc_instance.py
+│   │   ├── scaleDBInstance.sh
+│   │   ├── startDBInstance.sh
+│   │   └── stopDBInstance.sh
+│   ├── s3
+│   │   └── createBucket.py
+│   ├── secrets
+│   │   ├── createSecret.py
+│   │   ├── deleteSecret.py
+│   │   └── getSecrets.py
+│   └── ses
+│       ├── emailList
+│       │   ├── bcc.list
+│       │   ├── cc.list
+│       │   └── recipients.list
+│       └── testMail.sh
+├── rds
+│   └── rdsAdmin.py
+├── readme.md
+├── s3
+│   └── s3Admin.py
+├── secretmanager
+│   └── secretAdmin.py
+└── ses
+    └── sesAdmin.py
+
+14 directories, 28 files
